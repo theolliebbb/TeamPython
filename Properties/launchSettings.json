@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Dogs": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:7296/api/Dog",
+      "applicationUrl": "http://localhost:7296",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
