@@ -8,9 +8,9 @@
   <hr>
   <a href="{% url 'ml' %}">Machine Learning Tools</a>
 <hr>
-  <h2 class="Outline"><font color="White">Search Today's Top Videos</font></h2>
+  <h2 class="Outline"><font color="White">今日の人気な動画を探索</font></h2>
   <hr>
-  <h4 class="Outline"><font color="White">Youtube Analyzer will display a chart displaying <br>the top 100 most viewed videos in your selected category organized by Likes or Views.</font></h4>
+  <h4 class="Outline"><font color="White">Youtube Analyzer はトップ１００回視聴ある動画を <br>表します。</font></h4>
   {{div| safe}}
 
 </datalist>
@@ -27,38 +27,38 @@
           <div>
           
           <div>
-            <p class="Outline"><font color="White">Sort By:</font></p>
+            <p class="Outline"><font color="White">順番:</font></p>
           </div>
           <div>
           <input type="radio" id="views" name="r" value="Views">
-          <label class="form-control" for="views"><font class="Outline" color="White">Views</font></label><br>
+          <label class="form-control" for="views"><font class="Outline" color="White">回視聴</font></label><br>
           <input type="radio" id="likes" name="r" value="Likes">
-          <label class="form-control" for="css"><font class="Outline" color="White">Likes</font></label><br>
+          <label class="form-control" for="css"><font class="Outline" color="White">いいね</font></label><br>
           </div>
           <select style="width: 500px; height: 30px" name="s" list="Countries" placeholder="Select a Country">
             <datalist id="Countries">
-              <option value = "" >Select A Country</option>
-              <option value = "us" >America</option>
-              <option value = "jp" >Japan</option>
-              <option value = "kr" >Korea</option>
+              <option value = "" >国を選択してください</option>
+              <option value = "us" >米国</option>
+              <option value = "jp" >日本</option>
+              <option value = "kr" >韓国</option>
               </datalist>
               </select>
               <br>
           <select style="width: 500px; height: 30px" name="p" list="Categories" placeholder="Select a Category">
             <datalist id="Categories">
-              <option value = "" >Select A Category</option>
-              <option value = "1" >Film & Animation</option>
-              <option value = "2" >Autos & Vehicles</option>
-              <option value = "10" >Music</option>
-              <option value = "15" >Pets & Animals</option>
-              <option value = "17" >Sports</option>
+              <option value = "" >カテゴリー</option>
+              <option value = "1" >映画とアニメーション</option>
+              <option value = "2" >車と自動車</option>
+              <option value = "10" >音楽</option>
+              <option value = "15" >ペットと動物</option>
+              <option value = "17" >スポーツ</option>
               </datalist>
               </select>
           <div class="search">
             <div class="search">
               <input name="q" type="text"  placeholder="Enter Search Term Here">
               </div>
-          <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>Search</b></font></form>
+          <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>探索</b></font></form>
         
       </div>
       <hr>
