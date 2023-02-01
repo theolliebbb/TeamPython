@@ -1,0 +1,74 @@
+<html>
+   <center>
+      <p></p>
+      <hr>
+      <div class="search">
+         <input type=button value="Back" background="white" style= "color: #377eda" onClick="javascript:history.go(-1);"></input>
+         </div>
+   <head>
+      <link href=”http://cdn.pydata.org/bokeh/release/bokeh-3.0.1.min.css
+         " rel=”stylesheet” type=”text/css”>
+      <link href=”http://cdn.pydata.org/bokeh/release/bokeh-widgets-3.0.1.min.css"
+         rel=”stylesheet” type=”text/css”>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   </head>
+   <body>
+      <hr>
+      {{div| safe}}
+   </body>
+   <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.0.1.min.js"></script>
+   <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.0.1.min.js"></script>
+   <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.0.1.min.js"></script>
+   <script src="https://cdn.bokeh.org/bokeh/release/bokeh-api-3.0.1.min.js"></script>
+   {{script| safe}}
+   
+   
+</center>
+</html>
+<style>@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+   .search{
+   position: auto;
+   
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+     
+   }
+
+   .search input{
+
+    height: 30px;
+    width: 500px;
+    text-indent: 0px;
+    border: 2px solid #d6d4d4;
+
+
+   }
+
+
+   .search input:focus{
+     width: 500px;
+    box-shadow: none;
+
+
+   }
+
+   .search .fa-search{
+     width: auto;
+    position: absolute;
+    top: 20px;
+    left: 16px;
+
+   }
+
+   .search button{
+     
+     text-shadow: #d6d4d4;
+     -webkit-text-fill-color: #377eda;
+     font-variant-east-asian:jis04;
+    position: relative;
+    top: auto;
+    right: auto;
+    height: 50px;
+    width: 500px;
+    border-color: #d6d4d4;
+    background: #377eda;
+   }</style>

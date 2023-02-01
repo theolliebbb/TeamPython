@@ -1,0 +1,248 @@
+<center>
+    <title>Youtube Analyzer</title>
+    <font class="h1">
+  <body style="background-color: #377eda">
+    <h1 class="Outline"><font color="White">Youtube Analyzer</font></h1></body></font>
+    <hr>
+    <h2 class="Outline"><font color="White">Machine Learning Tools</font></h2>
+
+   <hr>
+   <a href="{% url 'Index' %}"><font color="White">Data Analysis Tools</font></a>
+  </datalist>
+    <div class="container" background="White">
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+     
+      <hr>
+      <h2 class="Outline"><font color="White">Create Unique Comment</font></h2>
+      <hr>
+      <h4 class="Outline"><font color="White">Youtube Analyzer will generate a custom comment <br>based on over 100,000 comments. (Will take a LONG time)</font></h4>
+      <form action="{% url 'comment' %}" method="get">
+        <div class="search">
+          <input name="o" type="text"  placeholder="Enter Prompt">
+          </div>
+          <div class="search">
+            <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>Generate</b></font></form>
+          
+        </div>
+      <hr>
+      <h2 class="Outline"><font color="White">Create Unique Description</font></h2>
+      <hr>
+      <h4 class="Outline"><font color="White">Youtube Analyzer will generate a unique video description <br>based on thousands of descriptions with MaChInE lEaRnInG. (Will take a LONG time)</font></h4>
+      <form action="{% url 'description' %}" method="get">
+        <div class="search">
+          <input name="a" type="text"  placeholder="Enter Prompt">
+          </div>
+          <div class="search">
+            <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>Generate</b></font></form>
+          
+        </div>
+      <hr>
+      <h2 class="Outline"><font color="White">Create Unique Video Title</font></h2>
+      <hr>
+      <h4 class="Outline"><font color="White">Youtube Analyzer will generate a unique video title <br>based on thousands of titles with MaChInE lEaRnInG. (Will take a ~6 minutes)</font></h4>
+      <form action="{% url 'title' %}" method="get">
+        <div class="search">
+          <input name="b" type="text"  placeholder="Enter Prompt">
+          </div>
+          <div class="search">
+            <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>Generate</b></font></form>
+              
+        </div>
+        <hr>
+        <h2 class="Outline"><font color="White">Create Video Page</font></h2>
+        <hr>
+        <h4 class="Outline"><font color="White">Youtube Analyzer will generate a unique video page with MaChInE lEaRnInG (Will take a LONG LONG LONG time)</font></h4>
+        <form action="{% url 'videopage' %}" method="get">
+          <div class="search">
+            <input name="c" type="text"  placeholder="Enter Title Prompt"></div>
+          <div class="search">
+          <input name="d" type="text"  placeholder="Enter Description Prompt"></div>
+          <div class="search">
+            <input name="e" type="text"  placeholder="Enter Comment Prompt"></div>
+            <div class="search">
+              <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>Generate</b></font></form></div>
+                
+          </div>
+        <hr>
+      
+      <h5><font color="White">*Some videos for which data is inadequately retrieved will display a Like Count of 0.*</font></h5>
+      <h5><font color="White">**Some categories for which data is inadequately retrieved will display a video count of 0.**</font></h5>
+    </font>
+  
+    <style>@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+  
+  
+      #progress-bar {
+        margin-top: 1em;
+      }
+      h1 { font-family: Optima; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+  
+      :root {
+        --form-control-color: rgb(255, 255, 255);
+        
+      }
+  
+      .form-control {
+        font-family: Optima;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 0.5;
+        display:block;
+        grid-template-columns: 0em auto;
+        gap: 0em;
+        
+      }
+  
+      .form-control + .form-control {
+        margin-top: 1em;
+        
+      }
+  
+      .form-control:focus-within {
+        color: var(--form-control-color);
+        
+      }
+  
+      input[type="radio"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        /* Remove most all native input styles */
+        appearance: none;
+        /* For iOS < 15 */
+        background-color: var(--form-background);
+        /* Not removed via appearance */
+        margin: 10;
+        margin-right: auto;
+        margin-left: auto;
+  
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 50%;
+        transform: translateY(0em);
+  
+        display: grid;
+        place-content: center;
+      }
+  
+      input[type="radio"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        /* Windows High Contrast Mode */
+        background-color: CanvasText;
+        
+      }
+  
+      input[type="radio"]:checked::before {
+        transform: scale(1);
+      }
+  
+      input[type="radio"]:focus {
+        outline: max(0px, 0.15em) solid currentColor;
+        outline-offset: max(0px, 0.15em);
+      }
+      .Outline { 
+          color: white;
+          text-shadow:
+          /* Outline */
+          -1px -1px 0 #000000,
+          1px -1px 0 #2e2e2e,
+          -1px 1px 0 #474747,
+          1px 1px 0 #636363,  
+          -2px 0 0 hsl(0, 1%, 31%),
+          2px 0 0 #535353,
+          0 2px 0 #2e2e2e,
+          0 -2px 0 #252525; /* Terminate with a semi-colon */
+      }
+      .height{
+       height: 100vh;
+       
+      }
+      .Outline2 { 
+          color: #377eda;
+          text-shadow:
+          /* Outline */
+          -1px -1px 0 #000000
+          ; /* Terminate with a semi-colon */
+      }
+      .height{
+       height: 100vh;
+       
+      }
+      
+  
+      .search{
+      position: auto;
+      
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+        
+      }
+  
+      .search input{
+  
+       height: 30px;
+       width: 500px;
+       text-indent: 0px;
+       border: 2px solid #d6d4d4;
+  
+  
+      }
+  
+  
+      .search input:focus{
+        width: 500px;
+       box-shadow: none;
+  
+  
+      }
+  
+      .search .fa-search{
+        width: auto;
+       position: absolute;
+       top: 20px;
+       left: 16px;
+  
+      }
+  
+      .search button{
+        
+        text-shadow: #d6d4d4;
+        -webkit-text-fill-color: #377eda;
+        font-variant-east-asian:jis04;
+       position: relative;
+       top: auto;
+       right: auto;
+       height: 50px;
+       width: 500px;
+       border-color: #d6d4d4;
+       background: #377eda;
+      }</style>
+  
+  
+      <script>
+        function updateProgress(progressBarElement, progressBarMessageElement, progress) {
+          progressBarElement.style.width = progress.percent + "%";
+          progressBarMessageElement.innerHTML = progress.current + ' of ' + progress.total + ' processed.';
+        }
+        
+        var trigger = document.getElementById('progress-bar-trigger');
+        trigger.addEventListener('click', function(e) {
+          var bar = document.getElementById("progress-bar");
+          var barMessage = document.getElementById("progress-bar-message");
+          for (var i = 0; i < 11; i++) {
+            setTimeout(updateProgress, 500 * i, bar, barMessage, {
+              percent: 10 * i,
+              current: 10 * i,
+              total: 100
+            })
+          }
+        })
+        <\script>
