@@ -1,4 +1,4 @@
-# Okada_Team_Python/YoutubeAnalysis
+# YoutubeAnalysis
 ## 利用者向け
 ### アプリケーション概要
 本アプリケーションは、YoutubeAPIを活用して、<br>
@@ -6,7 +6,7 @@
 普段、Youtubeアプリを利用するだけでは知りえない、広範囲な視点で最近の傾向を把握することができます。
 
 ### 動作環境
-対応OS:Windows11,Windows10<br>
+対応OS:Windows11,10<br>
 ブラウザー:GoogleChrome
 
 ### アプリケーションの使い始め方
@@ -27,16 +27,12 @@ Djangoフレームワークを活用してアプリケーションの開発を�
   - サーバー担当1名<br>
 
 ### 開発に必要なもの
-  - 統合開発環境:Python 3.10.4
+  - プログラム言語:Python 3.10.4
+  - 統合開発環境:Visual Studio Code
   - ライブラリ:
-  - フレームワーク:Django4.0.4
+  - フレームワーク:Django 4.0.4
   - サーバー:Heroku
 
-### 開発環境の構築方法と実行方法
-
-### デバッグ方法や自動テストの方法など、最低限知ってほしいもの
-
-### 仕様書・設計書・コーディング規約・アーキテクチャ図などのドキュメントへのリンク
-
-### 参考になる書籍やウェブサイトへのリンク
-Django Projects
+### 参考にした書籍やウェブサイトへのリンク
+  - [Django ドキュメント目次](https://docs.djangoproject.com/ja/4.0/contents/)
+  - [YouTube Data API](https://developers.google.com/youtube/v3)
