@@ -10,7 +10,7 @@
 ブラウザー:GoogleChrome
 
 ### アプリケーションの始め方
-[環境構築手順書]()に詳細あり。
+[環境構築手順書](https://github.com/theolliebbb/TeamPython/wiki/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E6%89%8B%E9%A0%86%E6%9B%B8)に詳細あり。
 
 ## 開発側向け
 ### 開発のゴール
