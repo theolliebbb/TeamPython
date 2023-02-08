@@ -9,8 +9,8 @@
 対応OS:Windows11,10<br>
 ブラウザー:GoogleChrome
 
-### アプリケーションの使い始め方
-
+### アプリケーションの始め方
+[Wiki]()に詳細あり。
 
 ## 開発側向け
 ### 開発のゴール
@@ -29,10 +29,11 @@ Djangoフレームワークを活用してアプリケーションの開発を�
 ### 開発に必要なもの
   - プログラム言語:Python 3.10.4
   - 統合開発環境:Visual Studio Code
-  - ライブラリ:
+  - ライブラリ:Bokeh
   - フレームワーク:Django 4.0.4
   - サーバー:Heroku
 
 ### 参考にした書籍やウェブサイトへのリンク
   - [Django ドキュメント目次](https://docs.djangoproject.com/ja/4.0/contents/)
   - [YouTube Data API](https://developers.google.com/youtube/v3)
+  - [Bokeh documentation](https://docs.bokeh.org/en/latest/)
