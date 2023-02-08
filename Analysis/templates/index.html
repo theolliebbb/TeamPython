@@ -3,14 +3,14 @@
   <font class="h1">
 <body style="background-color: #377eda">
   <h1 class="Outline"><font color="White">Youtube Analyzer</font></h1></body></font>
-  <hr>
+  <!-- <hr>
   <h2 class="Outline"><font color="White">データ分析道具</font></h2>
-  <hr>
-  <a href="{% url 'ml' %}">マシーンラーニング道具</a>
+  <hr> -->
+  <!-- <a href="{% url 'ml' %}">マシーンラーニング道具</a> -->
 <hr>
   <h2 class="Outline"><font color="White">今日のトップ動画を探索しよう！</font></h2>
   <hr>
-  <h4 class="Outline"><font color="White">Youtube Analyzerが<br>“いいね”と視聴による現在のトップ動画を表示します</font></h4>
+  <h3 class="Outline"><font color="White">Youtube Analyzerが<br>高評価と再生数による今日のトップ動画を表示します</font></h3>
   {{div| safe}}
 
 </datalist>
@@ -27,13 +27,13 @@
           <div>
           
           <div>
-            <p class="Outline"><font color="White">並び:</font></p>
+            <p class="Outline"><font color="White">並び替え:</font></p>
           </div>
           <div>
           <input type="radio" id="views" name="r" value="Views">
-          <label class="form-control" for="views"><font class="Outline" color="White">視聴</font></label><br>
+          <label class="form-control" for="views"><font class="Outline" color="White">再生数</font></label><br>
           <input type="radio" id="likes" name="r" value="Likes">
-          <label class="form-control" for="css"><font class="Outline" color="White">いいね</font></label><br>
+          <label class="form-control" for="css"><font class="Outline" color="White">高評価</font></label><br>
           </div>
           <select style="width: 500px; height: 30px" name="s" list="Countries" placeholder="Select a Country">
             <datalist id="Countries">
@@ -56,18 +56,18 @@
               </select>
           <div class="search">
             <div class="search">
-              <input name="q" type="text"  placeholder="探索項目をここに入力してください">
+              <input name="q" type="text"  placeholder="検索するタイトルのキーワードを入力してください">
               </div>
           <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>探索</b></font></form>
         
       </div>
       <hr>
-  <h2 class="Outline"><font color="White">いいねとコメント数を見積もる</font></h2>
+  <h2 class="Outline"><font color="White">高評価とコメント数を予測します</font></h2>
   <hr>
-  <h4 class="Outline"><font color="White">Youtube Analyzerが<br>指定された視聴数によって、いいねとコメント数の見積もりを表示します。</font></h4>
+  <h4 class="Outline"><font color="White">Youtube Analyzerが<br>指定された再生数によって、高評価とコメント数の予測を表示します。</font></h4>
   <form action="{% url 'data1' %}" method="get">
     <div class="search">
-      <input name="m" type="text"  placeholder="視聴数を入力してください">
+      <input name="m" type="text"  placeholder="再生数を入力してください">
       </div>
       <div class="search">
         <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>計算</b></font></form>
@@ -76,9 +76,7 @@
    
       <hr>
     
-    <h5><font color="White">*情報が足りなければ、いいねの数は０になる可能性あります.*</font></h5>
-    <h5><font color="White">**    <h5><font color="White">*情報が足りなければ、あるカテゴリーの動画数は０になる可能性あります.*</font></h5>
-    .**</font></h5>
+    <h5><font color="White">*情報が足りなければ、検索結果は０になる可能性あります.*</font></h5>
   </font>
 
   <style>@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
