@@ -4,13 +4,13 @@
 <body style="background-color: #377eda">
   <h1 class="Outline"><font color="White">Youtube Analyzer</font></h1></body></font>
   <hr>
-  <h2 class="Outline"><font color="White">Data Analysis Tools</font></h2>
+  <h2 class="Outline"><font color="White">データ分析道具</font></h2>
   <hr>
-  <a href="{% url 'ml' %}">Machine Learning Tools</a>
+  <a href="{% url 'ml' %}">マシーンラーニング道具</a>
 <hr>
-  <h2 class="Outline"><font color="White">今日の人気な動画を探索</font></h2>
+  <h2 class="Outline"><font color="White">今日のトップ動画を探索しよう！</font></h2>
   <hr>
-  <h4 class="Outline"><font color="White">Youtube Analyzer はトップ１００回視聴ある動画を <br>表します。</font></h4>
+  <h4 class="Outline"><font color="White">Youtube Analyzerが<br>“いいね”と視聴による現在のトップ動画を表示します</font></h4>
   {{div| safe}}
 
 </datalist>
@@ -27,11 +27,11 @@
           <div>
           
           <div>
-            <p class="Outline"><font color="White">順番:</font></p>
+            <p class="Outline"><font color="White">並び:</font></p>
           </div>
           <div>
           <input type="radio" id="views" name="r" value="Views">
-          <label class="form-control" for="views"><font class="Outline" color="White">回視聴</font></label><br>
+          <label class="form-control" for="views"><font class="Outline" color="White">視聴</font></label><br>
           <input type="radio" id="likes" name="r" value="Likes">
           <label class="form-control" for="css"><font class="Outline" color="White">いいね</font></label><br>
           </div>
@@ -46,9 +46,9 @@
               <br>
           <select style="width: 500px; height: 30px" name="p" list="Categories" placeholder="Select a Category">
             <datalist id="Categories">
-              <option value = "" >カテゴリー</option>
+              <option value = "" >カテゴリーを選択してください</option>
               <option value = "1" >映画とアニメーション</option>
-              <option value = "2" >車と自動車</option>
+              <option value = "2" >自動車</option>
               <option value = "10" >音楽</option>
               <option value = "15" >ペットと動物</option>
               <option value = "17" >スポーツ</option>
@@ -56,28 +56,29 @@
               </select>
           <div class="search">
             <div class="search">
-              <input name="q" type="text"  placeholder="Enter Search Term Here">
+              <input name="q" type="text"  placeholder="探索項目をここに入力してください">
               </div>
           <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>探索</b></font></form>
         
       </div>
       <hr>
-  <h2 class="Outline"><font color="White">Project Likes And Comments</font></h2>
+  <h2 class="Outline"><font color="White">いいねとコメント数を見積もる</font></h2>
   <hr>
-  <h4 class="Outline"><font color="White">Youtube Analyzer will display a chart displaying <br>the projected amount of comments and likes according to the designated view count.</font></h4>
+  <h4 class="Outline"><font color="White">Youtube Analyzerが<br>指定された視聴数によって、いいねとコメント数の見積もりを表示します。</font></h4>
   <form action="{% url 'data1' %}" method="get">
     <div class="search">
-      <input name="m" type="text"  placeholder="Enter Views">
+      <input name="m" type="text"  placeholder="視聴数を入力してください">
       </div>
       <div class="search">
-        <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>Calculate</b></font></form>
+        <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>計算</b></font></form>
       
     </div>
    
       <hr>
     
-    <h5><font color="White">*Some videos for which data is inadequately retrieved will display a Like Count of 0.*</font></h5>
-    <h5><font color="White">**Some categories for which data is inadequately retrieved will display a video count of 0.**</font></h5>
+    <h5><font color="White">*情報が足りなければ、いいねの数は０になる可能性あります.*</font></h5>
+    <h5><font color="White">**    <h5><font color="White">*情報が足りなければ、あるカテゴリーの動画数は０になる可能性あります.*</font></h5>
+    .**</font></h5>
   </font>
 
   <style>@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
