@@ -1,362 +1,253 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+
+#progress-bar {
+    margin-top: 1em;
+  }
+  h1 { font-family: Optima; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+
+  :root {
+    --form-control-color: rgb(255, 255, 255);
+    
+  }
+
+  .form-control {
+    font-family: Optima;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 0.5;
+    display:block;
+    grid-template-columns: 0em auto;
+    gap: 0em;
+    
+  }
+
+  .form-control + .form-control {
+    margin-top: 1em;
+    
+  }
+
+  .form-control:focus-within {
+    color: var(--form-control-color);
+    
+  }
+
+  input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 10;
+    margin-right: auto;
+    margin-left: auto;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(0em);
+
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+    
+  }
+
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  input[type="radio"]:focus {
+    outline: max(0px, 0.15em) solid currentColor;
+    outline-offset: max(0px, 0.15em);
+  }
+  .Outline { 
+      color: white;
+      text-shadow:
+      /* Outline */
+      -1px -1px 0 #000000,
+      1px -1px 0 #2e2e2e,
+      -1px 1px 0 #474747,
+      1px 1px 0 #636363,  
+      -2px 0 0 hsl(0, 1%, 31%),
+      2px 0 0 #535353,
+      0 2px 0 #2e2e2e,
+      0 -2px 0 #252525; /* Terminate with a semi-colon */
+  }
+  .height{
+   height: 100vh;
+   
+  }
+  .Outline2 { 
+      color: #377eda;
+      text-shadow:
+      /* Outline */
+      -1px -1px 0 #000000
+      ; /* Terminate with a semi-colon */
+  }
+  .height{
+   height: 100vh;
+   
+  }
+  
+
+  .search{
+  position: auto;
+  
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+    
+  }
+
+  .search input{
+
+   height: 30px;
+   width: 500px;
+   text-indent: 0px;
+   border: 2px solid #d6d4d4;
+
+
+  }
+
+
+  .search input:focus{
+    width: 500px;
+   box-shadow: none;
+
+
+  }
+
+  .search .fa-search{
+    width: auto;
+   position: absolute;
+   top: 20px;
+   left: 16px;
+
+  }
+
+  .search button{
+    
+    text-shadow: #d6d4d4;
+    -webkit-text-fill-color: #377eda;
+    font-variant-east-asian:jis04;
+   position: relative;
+   top: auto;
+   right: auto;
+   height: 50px;
+   width: 500px;
+   border-color: #d6d4d4;
+   background: #377eda;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap');
+
+header {
+height: 200vh;
 }
 
-main {
-    background-color: rgba(252,252,252,0.726);
+.container {
+/* hide fixed overflow contents */
+clip: rect(0, auto, auto, 0);
+
+/* does not work if overflow = visible */
+overflow: hidden;
+
+/* only works with absolute positioning */
+position: absolute;
+
+/* Make sure containers are full-width and height */
+height: 100vh;
+left: 0;
+width: 100%;
+
+
+/* safari hack */
+-webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 56px;
-    padding: 0 10px;
+.container_solid {
+background: white;
 
-    background-color: white;
+/* position this container at the top of its parent element */
+top: 0;
 }
 
-.add-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
+.title_wrapper {
+position: fixed;
+display: block;  
+margin: auto;
+width: 100%;
+/* center the text wrapper vertically */
+top: 50%;
+-webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
 }
 
-#nav-middle {
-    max-width: 600px;
-    min-width: 250px;
+.title_wrapper h1 {
+text-align: center;
+font-size: 64px;
+text-transform: uppercase;
+text-align: center;
+font-family: 'Fraunces', serif;
+font-weight: 900;
 }
 
-#hamburger-icon {
-    height: 30px;
-    width: 20px;
-    padding: 0 10px;
+.container_solid .title_wrapper h1 {
+/* the text background */
+background: url(images/pexels-photo.jpg);
+background-size: 100vw auto;
+background-position: center;
 
-    color: gray;
+/* clip the text is possible */
+text-fill-color: transparent;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+
+/* fallback text color */
+color: black;
 }
 
-#youtube-logo {
-    width: 80px;
-    margin-right: 100px;
-    margin-left: 10px;
+.container_image {
+/* Grab a free image from unsplash */
+background-image: url(images/pexels-photo.jpg);
+background-size:100vw auto;
+background-position: center;
+background-attachment: fixed;
+
+/* position the second container below the first container */
+top: 100vh;
 }
 
-input[type=text] {
-    height: 26px;
-    width: 550px;
-    padding: 2px 10px;
-    margin: 0;
-
-    font-size: 16px;
-
-    border: 1px solid rgb(192,192,192);
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+.container_image .title_wrapper h1 {
+color: white;
 }
 
-#search-button {
-    flex-shrink: 0;
-    height: 32px;
-    width:  60px;
-
-    border-width: 1px 1px 1px 0;
-    border-style: solid;
-    border-color: rgb(192,192,192);
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+section {
+min-height: 100vh;
+padding: 2em;
+margin: auto;
+max-width: 800px;
 }
 
-#profile-pic {
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
+section h2 {
+font-family: 'Fraunces', serif;
 }
 
-.picture-link {
-    display: flex;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    margin: 0 10px;
+section p {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
-
-#create-vid-icon,
-#grid-icon,
-#bell-icon,
-#three-dots-icon {
-    flex-shrink: 0;
-    height: 30px;
-    width: 20px;
-    margin: 0 15px;
-
-    color: gray;
-}
-
-#primary {
-    width: 65%;
-    min-width: 360px;
-    padding: 0 2.5%;
-}
-
-/* VIDEO WRAPPER IS AN INTRINSIC RATIO TECHNIQUE */
-#videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-}
-
-#videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-#video-title-header {
-    margin: 15px 0 8px 0;
-}
-
-#hashtags {
-    font-size: 12px;
-    color: royalblue;
-}
-
-h3 {
-    margin: 0;
-    font-weight: 400;
-}
-
-#info-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    font-size: 14px;
-    color: rgb(94, 94, 94);
-}
-
-#dot {
-    margin: 0 5px;
-}
-
-.stat {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-}
-
-hr {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.206);
-}
-
-.icon {
-    padding-right: 8px;
-}
-
-#info-right {
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-#like-count,
-#dislike-count {
-    border-bottom: 2px solid gray
-}
-
-#creator-container {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-
-    font-size: 14px;
-    color: rgb(94, 94, 94);
-}
-
-#picture-container {
-    width: 60px;
-}
-
-#creator-pic {
-    height: 45px;
-    width: 45px;
-    border-radius: 100%;
-}
-
-#creator-info > div a {
-    color: black;
-    text-decoration: none;
-}
-
-#subscribe-button-container {
-    display: flex;
-    flex-grow: 2;
-    justify-content: end;
-}
-
-#subscribe-button {
-    color: white;
-    background-color: #cc0000;
-}
-
-#video-description {
-    margin-left: 60px;
-    font-size: 14px;
-}
-
-#comments-header {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-}
-
-#sort-comments {
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-
-    font-size: 14px;
-    font-weight: 600;
-    color: rgb(109, 109, 109);
-    text-transform: uppercase;
-}
-
-#comment-input-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-#comment-input {
-    padding: 0;
-    margin-left: 20px;
-    width: 100%;
-
-    border-width: 0 0 1px 0;
-    outline: none
-}
-
-#input-buttons {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.button {
-    height: 35px;
-    width: 100px;
-
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-
-    border: none;
-    border-radius: 2px;
-}
-
-#submit-comment-button {
-    color: white;
-    background-color: rgb(197, 197, 197);
-}
-
-#cancel-comment-button {
-    color: rgb(97, 96, 96);
-    background-color: white;
-}
-
-.comment-container {
-    display: flex;
-    margin: 25px 0;
-}
-
-.votes {
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    color: rgb(97, 96, 96);
-    text-transform: uppercase;
-}
-
-.user {
-    padding: 0 16px;
-}
-
-.comment-author {
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.comment-date {
-    font-size: 13px;
-    color: gray;
-}
-
-.authors-comment {
-    font-size: 14px;
-    margin: 5px 0 10px 0;
-}
-
-.comment-likes,
-.comment-dislikes {
-    margin-right: 10px;
-}
-
-#secondary {
-    float: right;
-    width: 30%;
-    padding: 0 10px;    
-}
-
-#aside-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.recommended-vid-container {
-    display: flex;
-    align-items: center;
-    width: 330px;
-    padding: 10px 0;
-}
-
-.thumbnail {
-    width: 150px;
-    height: 90px;
-}
-
-.recommended-description {
-    font-size: 13px;
-}
-
-.recommended-description p {
-    margin: 0;
-    white-space: nowrap;
-}
-
-@media (max-width: 850px) {
-    aside {
-        display: none;
-    }
-
-    #search-bar,
-    #search-button {
-        display: none;
-    }
-
-    #nav-middle {
-        max-width: 0;
-        min-width: 0;
-    }
-
-    #youtube-logo {
-        margin-right: 0;
-    }
-
-    #primary {
-        width: 95%;
-        min-width: 320px;
-        padding: 0 2.5%;
-    }
-}
+  

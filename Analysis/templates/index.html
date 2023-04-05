@@ -1,20 +1,31 @@
+
+<header>
+
+  <!-- First container -->
+  <div class="container container_solid">
+    <div class="title_wrapper">
+      <h1>Youtube Analyzer</h1>
+    </div>
+  </div>
+
+  <!-- Second container -->
+  <div class="container container_image" aria-hidden="true">
+    <div class="title_wrapper">
+      <h1 class="Outline">Youtube Analyzer</h1>
+    </div>
+  </div>
+
+</header>
+
+  <div class="transparent">
+
+
 <center>
-  <title>Youtube Analyzer</title>
   <font class="h1">
-<body style="background-color: #377eda">
-  <h1 class="Outline"><font color="White">Youtube Analyzer</font></h1></body></font>
-  <!-- <hr>
-  <h2 class="Outline"><font color="White">データ分析道具</font></h2>
-  <hr> -->
-  <!-- <a href="{% url 'ml' %}">マシーンラーニング道具</a> -->
-<hr>
   <h2 class="Outline"><font color="White">今日のトップ動画を探索しよう！</font></h2>
   <hr>
   <h3 class="Outline"><font color="White">Youtube Analyzerが<br>高評価と再生数による今日のトップ動画を表示します</font></h3>
   {{div| safe}}
-
-</datalist>
-  <div class="container" background="White"> 
     <div class="row height d-flex justify-content-center align-items-center">
       <div class="col-md-8">
         <div class="search">
@@ -30,7 +41,7 @@
             <p class="Outline"><font color="White">並び替え:</font></p>
           </div>
           <div>
-          <input type="radio" id="views" name="r" value="Views">
+          <input type="radio" id="views" name="r" value="Views" checked="true">
           <label class="form-control" for="views"><font class="Outline" color="White">再生数</font></label><br>
           <input type="radio" id="likes" name="r" value="Likes">
           <label class="form-control" for="css"><font class="Outline" color="White">高評価</font></label><br>
@@ -71,169 +82,20 @@
       </div>
       <div class="search">
         <button  type="submit" value="CLICK" style="background-color: white"><font style="color: #377eda"><b>計算</b></font></form>
-      
+        </div></div>
     </div>
-   
-      <hr>
-    
-    <h5><font color="White">*情報が足りなければ、検索結果は０になる可能性あります.*</font></h5>
-  </font>
-
+<hr>
+<h5><font color="White">*情報が足りなければ、検索結果は０になる可能性あります.*</font></h5>
+</font>
+{% load static %}
+<link rel="stylesheet" href="{% static 'Analysis/style.css' %}">
+</div>
+</div>
+</div>
   <style>@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
 
-    #progress-bar {
-      margin-top: 1em;
-    }
-    h1 { font-family: Optima; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
-
-    :root {
-      --form-control-color: rgb(255, 255, 255);
-      
-    }
-
-    .form-control {
-      font-family: Optima;
-      font-size: 1rem;
-      font-weight: bold;
-      line-height: 0.5;
-      display:block;
-      grid-template-columns: 0em auto;
-      gap: 0em;
-      
-    }
-
-    .form-control + .form-control {
-      margin-top: 1em;
-      
-    }
-
-    .form-control:focus-within {
-      color: var(--form-control-color);
-      
-    }
-
-    input[type="radio"] {
-      /* Add if not using autoprefixer */
-      -webkit-appearance: none;
-      /* Remove most all native input styles */
-      appearance: none;
-      /* For iOS < 15 */
-      background-color: var(--form-background);
-      /* Not removed via appearance */
-      margin: 10;
-      margin-right: auto;
-      margin-left: auto;
-
-      font: inherit;
-      color: currentColor;
-      width: 1.15em;
-      height: 1.15em;
-      border: 0.15em solid currentColor;
-      border-radius: 50%;
-      transform: translateY(0em);
-
-      display: grid;
-      place-content: center;
-    }
-
-    input[type="radio"]::before {
-      content: "";
-      width: 0.65em;
-      height: 0.65em;
-      border-radius: 50%;
-      transform: scale(0);
-      transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em var(--form-control-color);
-      /* Windows High Contrast Mode */
-      background-color: CanvasText;
-      
-    }
-
-    input[type="radio"]:checked::before {
-      transform: scale(1);
-    }
-
-    input[type="radio"]:focus {
-      outline: max(0px, 0.15em) solid currentColor;
-      outline-offset: max(0px, 0.15em);
-    }
-    .Outline { 
-        color: white;
-        text-shadow:
-        /* Outline */
-        -1px -1px 0 #000000,
-        1px -1px 0 #2e2e2e,
-        -1px 1px 0 #474747,
-        1px 1px 0 #636363,  
-        -2px 0 0 hsl(0, 1%, 31%),
-        2px 0 0 #535353,
-        0 2px 0 #2e2e2e,
-        0 -2px 0 #252525; /* Terminate with a semi-colon */
-    }
-    .height{
-     height: 100vh;
-     
-    }
-    .Outline2 { 
-        color: #377eda;
-        text-shadow:
-        /* Outline */
-        -1px -1px 0 #000000
-        ; /* Terminate with a semi-colon */
-    }
-    .height{
-     height: 100vh;
-     
-    }
-    
-
-    .search{
-    position: auto;
-    
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0);
-      
-    }
-
-    .search input{
-
-     height: 30px;
-     width: 500px;
-     text-indent: 0px;
-     border: 2px solid #d6d4d4;
-
-
-    }
-
-
-    .search input:focus{
-      width: 500px;
-     box-shadow: none;
-
-
-    }
-
-    .search .fa-search{
-      width: auto;
-     position: absolute;
-     top: 20px;
-     left: 16px;
-
-    }
-
-    .search button{
-      
-      text-shadow: #d6d4d4;
-      -webkit-text-fill-color: #377eda;
-      font-variant-east-asian:jis04;
-     position: relative;
-     top: auto;
-     right: auto;
-     height: 50px;
-     width: 500px;
-     border-color: #d6d4d4;
-     background: #377eda;
-    }</style>
+    </style>
 
 
     <script>
@@ -254,4 +116,4 @@
           })
         }
       })
-      <\script>
+      </script>

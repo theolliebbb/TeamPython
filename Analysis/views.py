@@ -1,12 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 import urllib.request
 from django.views import generic
 from . import models
-from bs4 import BeautifulSoup
 import json
 import numpy as np
 import pandas as pd
@@ -75,6 +72,7 @@ def graphresults(request):
         snippetlist = []
         if requestsSort == "Views":
             vid_list.sort(key=lambda x: int(x.statistics['viewCount']))
+            vid_list.reverse()
         elif requestsSort == "Likes":
             for o in vid_list:
                 try:
@@ -82,6 +80,7 @@ def graphresults(request):
                 except:
                     o.statistics['likeCount'] = 0;
             vid_list.sort(key=lambda x: int(x.statistics['likeCount']))
+            vid_list.reverse()
         else:
             vid_list = vid_list
         comments, titles, counts, likes, links = sortresults(vid_list)
@@ -97,17 +96,18 @@ def graphresults(request):
             widthamount = 300
         else:
             widthamount = len(titles) * 150
+
         data = {
             'titles': titles,
             'view': modifiedCounts,
             'like': modifiedLikes}
         source = ColumnDataSource(data = data)
-        plot = figure(x_range=titles, height=900, width=widthamount, y_axis_label = 'Views (/1000)', title="Likes And Views", toolbar_location="left")
+        plot = figure(x_range=titles, height=900, width=widthamount, y_axis_label = 'Views (/1000)', title="Likes And Views", toolbar_location="left",  sizing_mode='scale_height')
         plot.vbar(x=dodge('titles', 0.0, range=plot.x_range), top= 'view', width=0.7, source=source, legend_label="Views")
         plot.extra_y_ranges['like'] = Range1d(start=0, end=max(modifiedLikes))
         plot.add_layout(LinearAxis(y_range_name='like', axis_label='Likes (/1000)'), 'left')
         plot.vbar(x=dodge('titles', 0.25, range=plot.x_range), top='like', width=0.7, source=source, color="#e84d60", legend_label="Likes")
-        plot.xaxis.major_label_orientation = 3.141/4
+        plot.xaxis.major_label_orientation = .5
         plot.x_range.range_padding = 0.03
         plot.xgrid.grid_line_color = None
         plot.legend.location = "top_left"
