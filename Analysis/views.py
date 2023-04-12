@@ -118,94 +118,94 @@ def graphresults(request):
         html = '<html><body style="background-color: #377eda"><center><font color="white">No results with search term {} in category {}.</font></body></html>' .format(requests, requestsCat)
         return HttpResponse(html)
         
-def comment(request):
-    requestPhrase = request.GET.get("o")
-    from .machine import machinelearning
-    requestPhrase2 = machinelearning.generate_text(requestPhrase)
-    requestPhrase3 = machinelearning.generate_text(requestPhrase)
-    requestPhrase4 = machinelearning.generate_text(requestPhrase)
-    requestPhrase5 = machinelearning.generate_text(requestPhrase)
-    requestPhrase6 = machinelearning.generate_text(requestPhrase)
-    requestPhrase7 = machinelearning.generate_text(requestPhrase)
-    try:
-        html = '<html><body style="background-color: #377eda"><center><font color="white">Newly generated comments: {}<br>{}<br>{}<br>{}<br>{}<br>{}.</font></body></html>' .format(requestPhrase2, requestPhrase3, requestPhrase4, requestPhrase5, requestPhrase6, requestPhrase7)
-        return HttpResponse(html)
-    except:
-        html = '<html><body style="background-color: #377eda"><center><font color="white">Error occurred.</font></body></html>' 
-        return HttpResponse(html)
+# def comment(request):
+#     requestPhrase = request.GET.get("o")
+#     from .machine import machinelearning
+#     requestPhrase2 = machinelearning.generate_text(requestPhrase)
+#     requestPhrase3 = machinelearning.generate_text(requestPhrase)
+#     requestPhrase4 = machinelearning.generate_text(requestPhrase)
+#     requestPhrase5 = machinelearning.generate_text(requestPhrase)
+#     requestPhrase6 = machinelearning.generate_text(requestPhrase)
+#     requestPhrase7 = machinelearning.generate_text(requestPhrase)
+#     try:
+#         html = '<html><body style="background-color: #377eda"><center><font color="white">Newly generated comments: {}<br>{}<br>{}<br>{}<br>{}<br>{}.</font></body></html>' .format(requestPhrase2, requestPhrase3, requestPhrase4, requestPhrase5, requestPhrase6, requestPhrase7)
+#         return HttpResponse(html)
+#     except:
+#         html = '<html><body style="background-color: #377eda"><center><font color="white">Error occurred.</font></body></html>' 
+#         return HttpResponse(html)
 
-def description(request):
-    requestPhrase = request.GET.get("a")
-    from .machine import machinelearningDesc
-    requestPhrase2 = machinelearningDesc.generate_text(requestPhrase)
-    requestPhrase3 = machinelearningDesc.generate_text(requestPhrase)
-    requestPhrase4 = machinelearningDesc.generate_text(requestPhrase)
-    requestPhrase5 = machinelearningDesc.generate_text(requestPhrase)
-    requestPhrase6 = machinelearningDesc.generate_text(requestPhrase)
-    requestPhrase7 = machinelearningDesc.generate_text(requestPhrase)
-    try:
-        html = '<html><body style="background-color: #377eda"><center><font color="white">Newly generated comments: {}<br>{}<br>{}<br>{}<br>{}<br>{}.</font></body></html>' .format(requestPhrase2, requestPhrase3, requestPhrase4, requestPhrase5, requestPhrase6, requestPhrase7)
-        return HttpResponse(html)
-    except:
-        html = '<html><body style="background-color: #377eda"><center><font color="white">Error occurred.</font></body></html>' 
-        return HttpResponse(html)
+# def description(request):
+#     requestPhrase = request.GET.get("a")
+#     from .machine import machinelearningDesc
+#     requestPhrase2 = machinelearningDesc.generate_text(requestPhrase)
+#     requestPhrase3 = machinelearningDesc.generate_text(requestPhrase)
+#     requestPhrase4 = machinelearningDesc.generate_text(requestPhrase)
+#     requestPhrase5 = machinelearningDesc.generate_text(requestPhrase)
+#     requestPhrase6 = machinelearningDesc.generate_text(requestPhrase)
+#     requestPhrase7 = machinelearningDesc.generate_text(requestPhrase)
+#     try:
+#         html = '<html><body style="background-color: #377eda"><center><font color="white">Newly generated comments: {}<br>{}<br>{}<br>{}<br>{}<br>{}.</font></body></html>' .format(requestPhrase2, requestPhrase3, requestPhrase4, requestPhrase5, requestPhrase6, requestPhrase7)
+#         return HttpResponse(html)
+#     except:
+#         html = '<html><body style="background-color: #377eda"><center><font color="white">Error occurred.</font></body></html>' 
+#         return HttpResponse(html)
 
-def title(request):
-    requestPhrase = request.GET.get("b")
-    from .machine import machinelearningbigT
-    requestPhrase2 = machinelearningbigT.generate_text(requestPhrase)
-    requestPhrase3 = machinelearningbigT.generate_text(requestPhrase)
-    requestPhrase4 = machinelearningbigT.generate_text(requestPhrase)
-    requestPhrase5 = machinelearningbigT.generate_text(requestPhrase)
-    requestPhrase6 = machinelearningbigT.generate_text(requestPhrase)
-    requestPhrase7 = machinelearningbigT.generate_text(requestPhrase)
-    try:
-        html = '<html><body style="background-color: #377eda"><center><font color="white">Newly generated comments: {}<br>{}<br>{}<br>{}<br>{}<br>{}.</font></body></html>' .format(requestPhrase2, requestPhrase3, requestPhrase4, requestPhrase5, requestPhrase6, requestPhrase7)
-        return HttpResponse(html)
-    except:
-        html = '<html><body style="background-color: #377eda"><center><font color="white">Error occurred.</font></body></html>' 
-        return HttpResponse(html)
+# def title(request):
+#     requestPhrase = request.GET.get("b")
+#     from .machine import machinelearningbigT
+#     requestPhrase2 = machinelearningbigT.generate_text(requestPhrase)
+#     requestPhrase3 = machinelearningbigT.generate_text(requestPhrase)
+#     requestPhrase4 = machinelearningbigT.generate_text(requestPhrase)
+#     requestPhrase5 = machinelearningbigT.generate_text(requestPhrase)
+#     requestPhrase6 = machinelearningbigT.generate_text(requestPhrase)
+#     requestPhrase7 = machinelearningbigT.generate_text(requestPhrase)
+#     try:
+#         html = '<html><body style="background-color: #377eda"><center><font color="white">Newly generated comments: {}<br>{}<br>{}<br>{}<br>{}<br>{}.</font></body></html>' .format(requestPhrase2, requestPhrase3, requestPhrase4, requestPhrase5, requestPhrase6, requestPhrase7)
+#         return HttpResponse(html)
+#     except:
+#         html = '<html><body style="background-color: #377eda"><center><font color="white">Error occurred.</font></body></html>' 
+#         return HttpResponse(html)
 
-def videopage(request):
-    requestTitle = request.GET.get("c")
-    requestDesc = request.GET.get("d")
-    requestCom = request.GET.get("e")
+# def videopage(request):
+#     requestTitle = request.GET.get("c")
+#     requestDesc = request.GET.get("d")
+#     requestCom = request.GET.get("e")
     
-    file = r'Analysis\results.json'
-    response = open(file, encoding="utf8")
-    requestjson = json.load(response)
-    vid_list = getstats(requestjson, vid_list=[])
-    comments, titles, counts, likes, links = sortresults(vid_list)
-    requestViews = random.randint(100000, 1000000000)
-    viewresult, commentresult, likeresult = getratios(titles, comments, likes, counts, requestViews)
+#     file = r'Analysis\results.json'
+#     response = open(file, encoding="utf8")
+#     requestjson = json.load(response)
+#     vid_list = getstats(requestjson, vid_list=[])
+#     comments, titles, counts, likes, links = sortresults(vid_list)
+#     requestViews = random.randint(100000, 1000000000)
+#     viewresult, commentresult, likeresult = getratios(titles, comments, likes, counts, requestViews)
 
-    base = "https://www.youtube.com/embed/"
+#     base = "https://www.youtube.com/embed/"
     
-    dislikeresult = likeresult[0]/10
-    from .machine import machinelearningbigT
-    from .machine import machinelearning
-    from .machine import machinelearningDesc
-    title = machinelearningbigT.generate_text(requestTitle)
-    description = machinelearningDesc.generate_text(requestDesc)
-    comment = machinelearning.generate_text(requestCom)
-    driver = webdriver.Chrome('chromedriver.exe')
-    baseurl = "http://youtube.com"
-    driver.get(f'{baseurl}/search?q={title}')
-    hrefs = [video.get_attribute('href') for video in driver.find_elements(By.ID,"thumbnail")]
-    list = []
-    for href in hrefs:
-        if href is not None:
-            if 'https://www.youtube.com/watch?v=' in href:
-                newhref = href.replace('https://www.youtube.com/watch?v=', "")
-                list.append(base + newhref)
-    embed = ""
-    try:
-        embed=list[0]
-    except:
-        embed=""
-    driver.quit()
+#     dislikeresult = likeresult[0]/10
+#     from .machine import machinelearningbigT
+#     from .machine import machinelearning
+#     from .machine import machinelearningDesc
+#     title = machinelearningbigT.generate_text(requestTitle)
+#     description = machinelearningDesc.generate_text(requestDesc)
+#     comment = machinelearning.generate_text(requestCom)
+#     driver = webdriver.Chrome('chromedriver.exe')
+#     baseurl = "http://youtube.com"
+#     driver.get(f'{baseurl}/search?q={title}')
+#     hrefs = [video.get_attribute('href') for video in driver.find_elements(By.ID,"thumbnail")]
+#     list = []
+#     for href in hrefs:
+#         if href is not None:
+#             if 'https://www.youtube.com/watch?v=' in href:
+#                 newhref = href.replace('https://www.youtube.com/watch?v=', "")
+#                 list.append(base + newhref)
+#     embed = ""
+#     try:
+#         embed=list[0]
+#     except:
+#         embed=""
+#     driver.quit()
 
-    return render(request, 'videopage.html', {'title': title, 'comment': comment, 'description': description, 'likeresult' : likeresult[0], 'requestviews' : viewresult[0], 'commentresult' : commentresult, 'dislikeresult' : dislikeresult, 'id': embed})
+#     return render(request, 'videopage.html', {'title': title, 'comment': comment, 'description': description, 'likeresult' : likeresult[0], 'requestviews' : viewresult[0], 'commentresult' : commentresult, 'dislikeresult' : dislikeresult, 'id': embed})
     
 def data1(request):
     requestViews = request.GET.get("m")
