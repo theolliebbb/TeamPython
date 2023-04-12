@@ -1,14 +1,14 @@
 
 
 .body {
-  background-image: url(images/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style.jpg);
+  background-image: url(images/forest.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
     transition: border-width 0.6s linear;
 }
 .transparent {
-    background-image: url(images/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style.jpg);
+    background-image: url(images/forest.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
