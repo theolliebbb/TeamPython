@@ -1,13 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import requests
-import urllib.request
 from django.views import generic
 from . import models
 import json
 import numpy as np
 import pandas as pd
-import random
 from bokeh.models import ColumnDataSource
 from urllib.request import urlopen
 from bokeh.plotting import figure
@@ -18,9 +15,7 @@ from bokeh.transform import dodge
 
 from matplotlib.pylab import rcParams
 
-rcParams['figure.figsize']=20,10
 
-from keras.layers import LSTM,Dropout,Dense
 url = 'https://youtube.googleapis.com/youtube/v3/videos?part=id&part=snippet&part=statistics&chart=mostPopular&maxResults=100000&key=AIzaSyDaHhgnxRUkv4kFUaS8mqJmr3WI3ijyF4c'
 url2 = 'https://youtube.googleapis.com/youtube/v3/videos?part=id&part=snippet&part=statistics&chart=mostPopular&maxResults=100000&pageToken=CDIQAA&key=AIzaSyDaHhgnxRUkv4kFUaS8mqJmr3WI3ijyF4c'
 response = urlopen(url)
@@ -33,14 +28,6 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return requestjson
 
-class ml(generic.ListView):
-    template_name = 'ml.html'
-    def get_queryset(self):
-        return requestjson
-
-
-def mllink(request):
-    return ml.html
 def graphresults(request):
     requests = request.GET.get("q")
     requestsCat = request.GET.get("p")
