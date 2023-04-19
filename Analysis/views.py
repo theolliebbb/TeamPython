@@ -196,35 +196,38 @@ def graphresults(request):
     
 def data1(request):
     requestViews = request.GET.get("m")
-    file = r'Analysis\results.json'
-    response = open(file, encoding="utf8")
-    requestjson = json.load(response)
-    vid_list = getstats(requestjson, vid_list=[])
-    comments, titles, counts, likes, links = sortresults(vid_list)
-    viewresult, commentresult, likeresult = getratios(titles, comments, likes, counts, requestViews)
-    titles = []
-    titles.append("Sample Video")
-    data = {
-            'titles': titles,
-            'view': viewresult,
-            'like': likeresult,
-            'comment': commentresult}
-    source = ColumnDataSource(data = data)
-    plot = figure(x_range=titles, height=900, width=500, y_axis_label = 'Views / 1000', title="Projected Comments and Like for Selected Views", toolbar_location="left")
-    plot.vbar(x=dodge('titles', 0.0, range=plot.x_range), top= 'view', width=0.7, source=source, legend_label="Views")
-    plot.extra_y_ranges['like'] = Range1d(start=0, end=max(likeresult))
-    plot.extra_y_ranges['comment'] = Range1d(start=0, end=max(commentresult))
-    plot.add_layout(LinearAxis(y_range_name='like', axis_label='Projected Likes'), 'left')
-    plot.add_layout(LinearAxis(y_range_name='comment', axis_label='Projected Comments'), 'left')
-    plot.vbar(x=dodge('titles', 0.12, range=plot.x_range), top='like', width=0.7, source=source, color="#e84d60", legend_label="Likes")
-    plot.vbar(x=dodge('titles', 0.25, range=plot.x_range), top='comment', width=0.7, source=source, color="#5e03fc", legend_label="Comments")
-    plot.xaxis.major_label_orientation = 3.141/4
-    plot.x_range.range_padding = 0.03
-    plot.xgrid.grid_line_color = None
-    plot.legend.location = "top_left"
-    plot.legend.orientation = "horizontal"
-    script, div = components(plot)
-    return render(request, 'base.html', {'script': script, 'div': div})
+    try:
+        response = urlopen("https://youtube.googleapis.com/youtube/v3/videos?part=id&part=snippet&part=statistics&chart=mostPopular&maxResults=100000&key=AIzaSyDaHhgnxRUkv4kFUaS8mqJmr3WI3ijyF4c")
+        requestjson = json.load(response)
+        vid_list = getstats(requestjson, vid_list=[])
+        comments, titles, counts, likes, links = sortresults(vid_list)
+        viewresult, commentresult, likeresult = getratios(titles, comments, likes, counts, requestViews)
+        titles = []
+        titles.append("Sample Video")
+        data = {
+                'titles': titles,
+                'view': viewresult,
+                'like': likeresult,
+                'comment': commentresult}
+        source = ColumnDataSource(data = data)
+        plot = figure(x_range=titles, height=900, width=500, y_axis_label = 'Views / 1000', title="Projected Comments and Like for Selected Views", toolbar_location="left")
+        plot.vbar(x=dodge('titles', 0.0, range=plot.x_range), top= 'view', width=0.7, source=source, legend_label="Views")
+        plot.extra_y_ranges['like'] = Range1d(start=0, end=max(likeresult))
+        plot.extra_y_ranges['comment'] = Range1d(start=0, end=max(commentresult))
+        plot.add_layout(LinearAxis(y_range_name='like', axis_label='Projected Likes'), 'left')
+        plot.add_layout(LinearAxis(y_range_name='comment', axis_label='Projected Comments'), 'left')
+        plot.vbar(x=dodge('titles', 0.12, range=plot.x_range), top='like', width=0.7, source=source, color="#e84d60", legend_label="Likes")
+        plot.vbar(x=dodge('titles', 0.25, range=plot.x_range), top='comment', width=0.7, source=source, color="#5e03fc", legend_label="Comments")
+        plot.xaxis.major_label_orientation = 3.141/4
+        plot.x_range.range_padding = 0.03
+        plot.xgrid.grid_line_color = None
+        plot.legend.location = "top_left"
+        plot.legend.orientation = "horizontal"
+        script, div = components(plot)
+        return render(request, 'base.html', {'script': script, 'div': div})
+    except:
+        html = '<html><body style="background-color: #377eda"><center><font color="white">ダメじゃん</font></body></html>' 
+        return HttpResponse(html)
 
 def getratios(titles, comments, likes, counts, requestViews):
     viewlikeratio = 0
